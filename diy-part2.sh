@@ -18,7 +18,7 @@ sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generat
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
 
 ########### 更改大雕源码（可选）###########
-# sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.10/g' target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.19/g' target/linux/x86/Makefile
 
 ########### 更改默认主题（可选）###########
 # 删除自定义源默认的 argon 主题
@@ -30,8 +30,8 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 # make menuconfig时记得勾选LuCI ---> Applications ---> luci-app-argon-config
 
 ########### 更新lean的内置的smartdns版本 ###########
-sed -i 's/1.2021.35/2022.03.02/g' feeds/packages/net/smartdns/Makefile
-sed -i 's/f50e4dd0813da9300580f7188e44ed72a27ae79c/1fd18601e7d8ac88e8557682be7de3dc56e69105/g' feeds/packages/net/smartdns/Makefile
+sed -i 's/1.2022.37/2022.08.18/g' feeds/packages/net/smartdns/Makefile
+sed -i 's/5a2559f0648198c290bb8839b9f6a0adab8ebcdc/96d3deb595eae4f849cb2a51c69a9be89947fa0d/g' feeds/packages/net/smartdns/Makefile
 sed -i 's/^PKG_MIRROR_HASH/#&/' feeds/packages/net/smartdns/Makefile
 
 ########### 安装smartdns（必选）###########
