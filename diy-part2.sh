@@ -12,7 +12,7 @@
 
 ########### 修改默认 IP ###########
 # sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.6/g' package/base-files/files/bin/config_generate
 
 ########### 设置密码为空（可选） ###########
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
