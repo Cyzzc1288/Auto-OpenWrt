@@ -30,7 +30,7 @@ jobs:
       id: getHash
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH .
-        echo "::set-output name=commitHash::$(git rev-parse HEAD)"
+        echo "commitHash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
     - name: Compare Commit Hash
       id: cacheHash
       uses: actions/cache@v2
@@ -44,13 +44,13 @@ jobs:
         echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
     - name: Trigger build
       if: steps.cacheHash.outputs.cache-hit != 'true'
-      uses: peter-evans/repository-dispatch@v1
+      uses: peter-evans/repository-dispatch@v2.1.1
       with:
         token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
         event-type: Source Code Update
 
     - name: Delete workflow runs
-      uses: GitRML/delete-workflow-runs@main
+      uses: Mattraks/delete-workflow-runs@v2
       with:
         retain_days: 1
         keep_minimum_runs: 1
