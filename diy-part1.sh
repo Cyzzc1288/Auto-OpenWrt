@@ -18,7 +18,7 @@
 echo 'src-git nezha https://github.com/Erope/openwrt_nezha' >>feeds.conf.default
 
 ####### luci-smartdns-new-version #######
-echo 'src-git cyzzc https://github.com/cyzzc/cyzzc-package' >>feeds.conf.default
+echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
 
 ####### 科学上网插件 #######
 # echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall.git;packages' >>feeds.conf.default
